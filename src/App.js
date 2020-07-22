@@ -1,25 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { FileUploader } from './components/fileUploader'
+import EntityProvider from './context'
+import { FileTable } from './components/displayTable'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <EntityProvider>
+        <FileUploader />
+        <FileTable />
+      </EntityProvider>
+    </>
   );
 }
 
